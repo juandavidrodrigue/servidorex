@@ -1,6 +1,7 @@
 import Usuario from "../models/Usuario.js";
-import emailRegistro from "../models/emailRegistro.js";
-const prueba = (req, res)=>{
+import emailRegistro from "../helpers/emailRegistro.js";
+
+const prueba = (req, res) =>{
     res.send({
         msg:"En esta ruta gestionaremos todas las peticiones correspondiente al modelo de usuario"
     })

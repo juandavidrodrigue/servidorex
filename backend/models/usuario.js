@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 //https://www.npmjs.com/package/bcryptjs
 //https://www.npmjs.com/package/bcrypt
 import bcrypt from 'bcrypt';
-import generarId from '../helper/generarId.js';
+import generarId from '../helpers/gerenarId.js'
 const usuarioShema = mongoose.Schema({
     nombre:{
         type: String,

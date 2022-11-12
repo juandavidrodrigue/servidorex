@@ -2,6 +2,8 @@
 import express from "express";
 import dotenv from 'dotenv';
 import cors from 'cors';
+import fileUpload from "express-fileupload";
+
 import conectarDB from './config/db.js';
 import usuarioRoutes from './routes/usuarioRoutes.js';
 import productoRoutes from './routes/productoRoutes.js';
@@ -13,7 +15,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-//conectarDB();
+conectarDB();
 
 // middlewares
 // Se utiliza para realizar la comunicacion entre el servidor del frontend y el backendconst dominiosPermitidos = [process.env.FRONTEND_URL];
@@ -35,3 +37,9 @@ app.use('/api/ventas', ventaRoutes);
 app.listen(PORT, () => {
 console.log(`Servidor funcionando en el puerto ${PORT} `);
 });
+
+app.use(fileUpload({
+    useTempFiles: true,
+    tempFileDir: './files'
+
+}));

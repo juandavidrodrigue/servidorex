@@ -1,4 +1,4 @@
-import Usuario from "../models/Usuario.js";
+import Usuario from "../models/usuario.js";
 import emailRegistro from "../helpers/emailRegistro.js";
 
 const prueba = (req, res) =>{
